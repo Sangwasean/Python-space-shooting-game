@@ -3,8 +3,11 @@ from turtle import Turtle,Screen
 import random
 import math
 import time
+
+
 screen = Screen()#for screen
 screen.bgcolor("black")
+screen.bgpic("back.gif")
 screen.title("Space Invaders!")
 screen.tracer(0)
 pen = Turtle()#pen for displaying score, 'game over', 'you win'.
@@ -28,7 +31,7 @@ bullet.color("red")
 bullet.hideturtle()
 bullet.setheading(90)
 bullet_state = "ready"
-ser = serial.Serial('com7',9600)#sets the serial port and baud rate
+ser = serial.Serial('com9',9600)#sets the serial port and baud rate
 ser.flushInput()
 enemies = []
 TheGameIsRunning = True
