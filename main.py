@@ -9,12 +9,15 @@ pygame.init()
 
 pygame.mixer.init()
 
+
+
 screen = Screen()
 screen.bgcolor("black")
 screen.bgpic("back.gif")
 screen.title("Space Invaders!")
 screen.tracer(0)
-
+screen.register_shape("ship.gif")
+screen.register_shape("fire.gif")
 background_music = pygame.mixer.Sound("stranger-things-124008.mp3")
 background_music.play(-1)
 pen = Turtle()
@@ -25,16 +28,14 @@ pen.hideturtle()
 player = Turtle()
 player.speed(0)
 player.penup()
-player.shape("triangle")
-player.color("yellow")
+player.shape("ship.gif")
 player.setposition(0,-270)
 player.setheading(90)
 bullet = Turtle()#for the bullet
 bullet.speed(0)
 bullet.penup()
-bullet.shape('triangle')
+bullet.shape("fire.gif")
 bullet.shapesize(0.5,0.5)
-bullet.color("red")
 bullet.hideturtle()
 bullet.setheading(90)
 bullet_state = "ready"
